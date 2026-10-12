@@ -1,0 +1,716 @@
+:root {
+  --template-red: #b71335;
+  --template-red-dark: #8f102b;
+  --template-ink: #24292e;
+  --template-muted: #777b81;
+  --template-line: #e4e5e5;
+  --template-green: #197969;
+  --template-paper: #f6f7f7;
+  --template-white: #ffffff;
+}
+
+.app-shell,
+.access-page,
+.profile-page {
+  background: var(--template-paper);
+  color: var(--template-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-shell h1,
+.app-shell h2,
+.app-shell h3,
+.access-page h1,
+.access-page h2,
+.profile-page h1,
+.profile-page h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 218px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.app-shell .sidebar {
+  background: #fff;
+  border-right: 1px solid var(--template-line);
+  box-shadow: none;
+  color: var(--template-ink);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 27px 18px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.app-shell .brand-lockup {
+  align-items: center;
+  border-bottom: 1px solid var(--template-line);
+  display: flex;
+  gap: 10px;
+  padding: 0 4px 24px;
+}
+
+.app-shell .brand-mark,
+.profile-page .public-brand-mark,
+.access-page .public-brand-mark {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--template-red);
+  height: auto;
+  width: auto;
+}
+
+.app-shell .brand-lockup strong {
+  color: var(--template-red);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.app-shell .brand-lockup span {
+  color: #767b80;
+  font-size: 9px;
+}
+
+.app-shell .brand-lockup small {
+  color: #9a9da1;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.app-shell .sidebar-section-label {
+  color: #9a9da1;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 28px 8px 9px;
+  text-transform: uppercase;
+}
+
+.app-shell .role-navigation {
+  display: grid;
+  gap: 5px;
+}
+
+.app-shell .role-navigation button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #747980;
+  display: grid;
+  font-size: 11px;
+  font-weight: 650;
+  gap: 9px;
+  grid-template-columns: 19px 1fr auto;
+  min-height: 44px;
+  padding: 0 11px;
+  text-align: left;
+}
+
+.app-shell .role-navigation button:hover {
+  background: #faf0f2;
+  color: var(--template-red);
+}
+
+.app-shell .role-navigation button.active {
+  background: #f8e9ed;
+  border-color: #efd3da;
+  box-shadow: inset 3px 0 var(--template-red);
+  color: var(--template-red);
+}
+
+.app-shell .sidebar-callout {
+  background: #f8f9f9;
+  border: 1px solid var(--template-line);
+  border-radius: 5px;
+  color: var(--template-ink);
+  margin-top: auto;
+  padding: 16px;
+}
+
+.app-shell .sidebar-callout svg {
+  color: var(--template-green);
+}
+
+.app-shell .sidebar-callout strong {
+  color: var(--template-ink);
+  display: block;
+  font-size: 11px;
+  margin: 10px 0 5px;
+}
+
+.app-shell .sidebar-callout p {
+  color: var(--template-muted);
+  font-size: 9px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.app-shell .reset-button {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--template-line);
+  color: #85898e;
+  font-size: 10px;
+  margin-top: 18px;
+  padding: 17px 6px 0;
+}
+
+.app-shell .reset-button:hover {
+  color: var(--template-red);
+}
+
+.app-shell .workspace {
+  background: var(--template-paper);
+  min-width: 0;
+}
+
+.app-shell .topbar {
+  align-items: center;
+  background: rgb(255 255 255 / 96%);
+  border-bottom: 1px solid var(--template-line);
+  box-shadow: none;
+  display: flex;
+  height: 72px;
+  justify-content: space-between;
+  padding: 0 38px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.app-shell .topbar-context {
+  align-items: center;
+  color: #4f565c;
+  display: flex;
+  font-size: 10px;
+  font-weight: 650;
+  gap: 8px;
+}
+
+.app-shell .topbar-context small {
+  border-left: 1px solid var(--template-line);
+  color: #9a9da1;
+  font-size: 9px;
+  font-weight: 400;
+  margin-left: 7px;
+  padding-left: 15px;
+}
+
+.app-shell .network-pulse,
+.app-shell .status-dot,
+.app-shell .notification-dot {
+  background: var(--template-green);
+}
+
+.app-shell .topbar-actions {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+.app-shell .icon-button {
+  background: #fff;
+  border: 1px solid var(--template-line);
+  border-radius: 5px;
+  box-shadow: none;
+  color: #626a70;
+}
+
+.app-shell .profile-chip > span,
+.app-shell .avatar {
+  background: #f8e6eb;
+  color: var(--template-red);
+}
+
+.app-shell .profile-chip strong {
+  color: var(--template-ink);
+  font-size: 10px;
+}
+
+.app-shell .profile-chip small {
+  color: var(--template-muted);
+  font-size: 8px;
+}
+
+.app-shell .page-container {
+  margin: 0 auto;
+  max-width: 1480px;
+  padding: 32px 40px 50px;
+}
+
+.app-shell .page-heading {
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid var(--template-line);
+  border-radius: 6px;
+  box-shadow: none;
+  color: var(--template-ink);
+  display: grid;
+  gap: 34px;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  min-height: 0;
+  overflow: hidden;
+  padding: 32px 34px;
+}
+
+.app-shell .page-heading::before,
+.app-shell .page-heading::after,
+.app-shell .page-heading .blood-flow-canvas,
+.app-shell .hero-orbit {
+  display: none;
+}
+
+.app-shell .page-heading .hero-copy {
+  align-self: center;
+  max-width: 760px;
+}
+
+.app-shell .page-heading .hero-copy > p {
+  color: var(--template-red);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.app-shell .page-heading h1 {
+  color: var(--template-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+  margin: 0;
+  max-width: 780px;
+}
+
+.app-shell .page-heading .hero-copy > span {
+  color: #6f757a;
+  display: block;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 17px;
+  max-width: 660px;
+}
+
+.app-shell .hero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.app-shell .hero-trust-row small {
+  align-items: center;
+  background: #f8f9f9;
+  border: 1px solid var(--template-line);
+  border-radius: 4px;
+  color: #747b80;
+  display: flex;
+  font-size: 8px;
+  gap: 5px;
+  padding: 6px 8px;
+}
+
+.app-shell .hero-trust-row svg {
+  color: var(--template-green);
+}
+
+.app-shell .hero-status {
+  align-content: center;
+  background: #f8f9f9;
+  border: 1px solid var(--template-line);
+  border-radius: 5px;
+  color: var(--template-ink);
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  padding: 5px 18px;
+  position: static;
+}
+
+.app-shell .request-reference,
+.app-shell .hero-network-note {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--template-ink);
+  padding: 15px 0;
+}
+
+.app-shell .request-reference {
+  border-bottom: 1px solid var(--template-line);
+}
+
+.app-shell .request-reference small,
+.app-shell .hero-network-note > span {
+  color: #969a9f;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-shell .request-reference strong,
+.app-shell .hero-network-note strong {
+  color: var(--template-ink);
+  font-size: 13px;
+}
+
+.app-shell .request-state {
+  background: #e9f4f0;
+  border: 0;
+  color: var(--template-green);
+  font-size: 8px;
+}
+
+.app-shell .hero-network-note small {
+  color: #999da1;
+  font-size: 8px;
+}
+
+.app-shell .live-notice,
+.app-shell .privacy-banner {
+  background: #fff;
+  border: 1px solid var(--template-line);
+  border-radius: 5px;
+  box-shadow: none;
+  color: #687076;
+  margin: 16px 0;
+}
+
+.app-shell .live-notice svg,
+.app-shell .privacy-banner svg {
+  color: var(--template-green);
+}
+
+.app-shell .privacy-banner strong {
+  color: var(--template-ink);
+}
+
+.app-shell .privacy-banner p {
+  color: var(--template-muted);
+}
+
+.app-shell .privacy-banner > span {
+  background: #f8f9f9;
+  border-color: var(--template-line);
+  color: var(--template-green);
+}
+
+.app-shell .content-grid,
+.app-shell .hospital-content,
+.app-shell .district-content {
+  margin-top: 0;
+}
+
+.app-shell .panel,
+.app-shell .request-card,
+.app-shell .stat-card,
+.app-shell .request-desk,
+.app-shell .emergency-override-centre {
+  background: #fff;
+  border: 1px solid var(--template-line);
+  border-radius: 6px;
+  box-shadow: none;
+  color: var(--template-ink);
+}
+
+.app-shell .request-desk-heading {
+  background: #fff;
+  border-bottom: 1px solid var(--template-line);
+  color: var(--template-ink);
+}
+
+.app-shell .request-desk-heading > div:first-child > span {
+  color: var(--template-muted);
+}
+
+.app-shell .organization-seal {
+  background: #faf0f2;
+  border-color: #efd3da;
+}
+
+.app-shell .organization-seal small {
+  color: #8e7a80;
+}
+
+.app-shell .organization-seal > svg {
+  color: var(--template-red);
+}
+
+.app-shell .panel-heading h2,
+.app-shell .request-desk-heading h2,
+.app-shell .override-centre-heading h2,
+.app-shell .command-heading h2 {
+  color: var(--template-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.app-shell .panel-heading p,
+.app-shell .request-desk-heading > div > p,
+.app-shell .override-centre-heading > div > p {
+  color: var(--template-red);
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.app-shell .panel-heading > svg {
+  color: var(--template-red);
+}
+
+.app-shell .stat-card {
+  min-height: 112px;
+  padding: 19px;
+}
+
+.app-shell .stat-card p,
+.app-shell .stat-card > span,
+.app-shell .stat-card small {
+  color: var(--template-muted);
+}
+
+.app-shell .stat-card > strong {
+  color: var(--template-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 29px;
+}
+
+.app-shell .button,
+.app-shell .table-action,
+.app-shell .square-action {
+  border-radius: 5px;
+  box-shadow: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-shell .button-primary,
+.app-shell .table-action.primary {
+  background: var(--template-red);
+  border-color: var(--template-red);
+  color: #fff;
+}
+
+.app-shell .button-primary:hover:not(:disabled),
+.app-shell .table-action.primary:hover:not(:disabled) {
+  background: var(--template-red-dark);
+}
+
+.app-shell .button-secondary,
+.app-shell .button-ghost,
+.app-shell .table-action,
+.app-shell .square-action {
+  background: #fff;
+  border-color: #d8dadc;
+  color: #545b61;
+}
+
+.app-shell input,
+.app-shell select,
+.app-shell textarea,
+.profile-page input,
+.profile-page select {
+  background: #fff;
+  border: 1px solid #dfe2e5;
+  border-radius: 5px;
+  color: var(--template-ink);
+}
+
+.app-shell input:focus,
+.app-shell select:focus,
+.app-shell textarea:focus,
+.profile-page input:focus,
+.profile-page select:focus {
+  border-color: var(--template-red);
+  box-shadow: 0 0 0 3px rgb(183 19 53 / 9%);
+}
+
+.app-shell .rate-limit-strip,
+.app-shell .override-request-panel,
+.app-shell .production-boundary,
+.app-shell .queue-explainer,
+.app-shell .medical-boundary,
+.app-shell .approval-safety-note,
+.app-shell .override-boundary {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.app-shell .persona-switcher button,
+.app-shell .pending-request-card,
+.app-shell .override-decision-card,
+.app-shell .active-override-row,
+.app-shell .organization-seal {
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+.app-shell .donor-table-head,
+.app-shell .performance-head {
+  background: #f8f9f9;
+  color: #8b9095;
+}
+
+.app-shell .donor-table-row,
+.app-shell .performance-row,
+.app-shell .audit-row {
+  border-color: var(--template-line);
+}
+
+.app-shell .blood-group-tile,
+.app-shell .blood-group-orb {
+  background: #faedf0;
+  border-color: #f0d7de;
+  color: var(--template-red);
+}
+
+.app-shell .preview-footer {
+  color: #9a9da1;
+  font-size: 8px;
+  letter-spacing: 0.02em;
+}
+
+.profile-page {
+  min-height: 100vh;
+}
+
+.profile-page .profile-header {
+  background: #fff;
+  border-bottom: 1px solid var(--template-line);
+  box-shadow: none;
+}
+
+.profile-page .profile-layout > aside {
+  background: #fff;
+  border: 1px solid var(--template-line);
+  border-radius: 6px;
+  color: var(--template-ink);
+}
+
+.profile-page .profile-layout > aside h1,
+.profile-page .form-heading h2 {
+  color: var(--template-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 750;
+}
+
+.profile-page .profile-layout > aside p,
+.profile-page .profile-progress small {
+  color: var(--template-muted);
+}
+
+.profile-page .profile-progress > div > span {
+  background: #f8e9ed;
+  color: var(--template-red);
+}
+
+.access-page {
+  background: var(--template-paper);
+}
+
+.access-page .access-card {
+  border-color: var(--template-line);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.access-page .access-card h1 {
+  font-size: 34px;
+}
+
+@media (max-width: 1050px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell .sidebar {
+    display: none;
+  }
+
+  .app-shell .mobile-account-bar {
+    display: flex;
+  }
+
+  .app-shell .page-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell .hero-status {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .app-shell .request-reference {
+    border-bottom: 0;
+    border-right: 1px solid var(--template-line);
+    padding-right: 18px;
+  }
+
+  .app-shell .hero-network-note {
+    padding-left: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-shell .topbar {
+    height: 62px;
+    padding: 0 14px;
+  }
+
+  .app-shell .topbar-context {
+    display: none;
+  }
+
+  .app-shell .profile-chip > div {
+    display: none;
+  }
+
+  .app-shell .page-container {
+    padding: 18px 12px 42px;
+  }
+
+  .app-shell .page-heading {
+    gap: 22px;
+    padding: 23px 19px;
+  }
+
+  .app-shell .page-heading h1 {
+    font-size: 34px;
+  }
+
+  .app-shell .hero-status {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell .request-reference {
+    border-bottom: 1px solid var(--template-line);
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .app-shell .hero-network-note {
+    padding-left: 0;
+  }
+
+  .app-shell .content-grid,
+  .app-shell .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .access-page .access-card {
+    border-radius: 6px;
+  }
+}
